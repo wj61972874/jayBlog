@@ -1,0 +1,133 @@
+<div class="flex h-full min-h-[100vh] w-full flex-col">
+  <main class="flex flex-1 grow-[1] flex-col">
+    <div class="relative w-full bg-black text-white/75">
+      <header
+        [ngClass]="{
+          'fixed inset-0 mx-auto flex h-[100vh] w-[100vw] animate-[about-banner_3s_cubic-bezier(.6,_.2,_.25,_1),_about-opacity_1.5s_cubic-bezier(.6,_.2,_.25,_1)] px-[48px] transition-all':true,
+          'scale-[1.12] blur-[10px] brightness-75': blurBanner,
+        }"
+      >
+        <div
+          class="banner_img absolute left-0 top-0 z-0 h-full w-full bg-[#4d5e8f] bg-current bg-cover bg-center bg-no-repeat"
+        ></div>
+        <h2
+          class="absolute top-[150px] right-[120px] text-shadow-[0_1px_5px_rgb(0_0_0_/_30%)] z-10 flex w-[472px] animate-[about-opacity_1.5s_cubic-bezier(.6,_.2,_.25,_1)_3s_backwards] items-center justify-center font-[about-title] text-[34px] font-normal text-white/70 mix-blend-color-dodge"
+        >
+          <p>“在这个瞬息万变的世界里，能够与你相遇，是我最美好的幸运。”</p>
+        </h2>
+      </header>
+      <div
+        class="relative z-20 mx-auto mt-[92vh] w-full max-w-[1920px] px-[24px] pb-[64px] md:px-[48px]"
+        #aboutContent
+      >
+        <div class="flex flex-wrap gap-[24px]">
+          <!--简介: 带有渐变背景色的盒子 -->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="info-card gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] !transition-[all,box-shadow,opacity,transform] !duration-[1s,0.5s,0.5s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-16px)]"
+          >
+            <app-section-me />
+          </div>
+
+          <!--玄学: 不带有渐变背景色的盒子-->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="info-card flex gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-16px)]"
+          >
+            <app-section-divination />
+          </div>
+          <!--身份: 带有渐变背景色的盒子-->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="info-card flex gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(77_224_238_/_50%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] !transition-[all,box-shadow,opacity,transform] !duration-[1s,0.5s,0.5s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-16px)]"
+          >
+            <app-section-identity />
+          </div>
+
+          <!--职业: 不带有渐变背景色的盒子-->
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="info-card flex gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(33.33%-12px)]"
+          >
+            <app-section-occupation />
+          </div>
+
+          <!--休闲: 不带有渐变背景色的盒子 -->
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="info-card game-card group relative flex overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(0_0_0_/_30%)] to-[rgb(0_0_0_/_30%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)] md:w-[calc(66.66%-16px)]"
+          >
+            <app-section-game />
+          </div>
+
+          <!-- 技术栈: 带有渐变背景色的盒子 -->
+          <!-- <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            className="info-card group relative flex min-h-[240px] w-full flex-col content-between justify-between gap-[24px] overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(255_255_255_/_10%)] to-[rgb(255_255_255_/_10%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
+            <SectionCode />
+          </div> -->
+
+          <!-- 简介: 不带有渐变背景色的盒子-->
+          <div
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="info-card group relative flex min-h-[240px] w-full gap-[24px] overflow-hidden rounded-[4px] bg-[rgb(66_73_102_/_75%)] p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
+            <app-section-introduction />
+          </div>
+
+          <!--性格测试: 不带有渐变背景色的盒子-->
+          <div
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="info-card group w-full relative overflow-hidden rounded-[4px] bg-gradient-to-br from-[rgb(77_224_238_/_20%)] to-[rgb(77_224_238_/_20%)] bg-[length:200%_200%] bg-center p-[24px] shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_10%)] transition-[all,box-shadow] duration-[1s,0.5s] ease-in hover:bg-[200%_200%] hover:shadow-[0_5px_24px_0_hsl(0deg_0%_15%_/_3%),_0_0_0_2px_rgb(255_255_255_/_40%)]"
+          >
+            <app-section-personality />
+            <!-- aaa -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

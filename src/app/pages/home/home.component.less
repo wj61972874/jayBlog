@@ -1,0 +1,76 @@
+.main {
+  .container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    .header {
+      height: 400px;
+      position: relative;
+      border-bottom: 1px solid #fafafa;
+      .banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("../../../assets/images/personal_banner.png") center
+          #888;
+        background-size: cover;
+        z-index: -1;
+        .banner_mask {
+          mix-blend-mode: multiply;
+          inset: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: -webkit-linear-gradient(left, #fafafa, #aaa);
+          background-image: -moz-linear-gradient(left, #fafafa, #aaa);
+          background-image: -o-linear-gradient(left, #fafafa, #aaa);
+          background-image: -ms-linear-gradient(left, #fafafa, #aaa);
+          background-image: linear-gradient(to right, #fafafa, #aaa);
+        }
+      }
+      .header_outer {
+        height: 100%;
+        position: relative;
+        .main_nav {
+          font-size: 0;
+          position: absolute;
+          overflow: hidden;
+          bottom: 0;
+          left: 20px;
+
+          .main_nav_link {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 2.5em;
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            width: 7.5em;
+            background: #eee;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            color: #727272;
+            text-align: center;
+            -webkit-transition: background 0.3s ease;
+            -moz-transition: background 0.3s ease;
+            -o-transition: background 0.3s ease;
+            -ms-transition: background 0.3s ease;
+            transition: background 0.3s ease;
+            -webkit-box-shadow: 6px 12px 25px 2px rgba(68, 68, 68, 0.3);
+            box-shadow: 6px 12px 25px 2px rgba(68, 68, 68, 0.3);
+            &:hover {
+              background: #d5d5d5;
+              color: #444;
+            }
+          }
+        }
+      }
+    }
+  }
+}
