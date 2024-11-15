@@ -1,24 +1,23 @@
 import { NgClass, NgStyle } from '@angular/common';
 import { afterNextRender, ChangeDetectorRef, Component, inject, Inject } from '@angular/core';
-import { DynamicSvgComponent } from '@app/component/dynamic-svg/dynamic-svg.component';
 import { DomainService } from '@app/services/domain.service';
 
-const enEnergyContent = "Introverted";
-const enMindContent = "Observant";
+const enEnergyContent = "Extraverted";
+const enMindContent = "Intuitive";
 const enNatureContent = "Feeling";
-const enTacticsContent = "Prospecting";
+const enTacticsContent = "Judging";
 const enIdentityContent = "Assertive";
 
 // 精力: 外向 | 内向
-const energy = 61;
+const energy = 86;
 // 精神: 远见 | 现实
-const mind = 69;
+const mind = 59;
 // 判断方式: 理性 | 感受
-const nature = 61;
+const nature = 58;
 // 应对方式: 评判 | 展望
-const tactics = 57;
+const tactics = 76;
 // 身份特征: 坚决 | 起伏
-const identity = 83;
+const identity = 72;
 
 interface Personality {
   type: 'energy' | 'nature' | 'tactics' | 'identity' | 'mind';
@@ -132,6 +131,7 @@ export class SectionPersonalityComponent {
 
   private domainService = inject(DomainService);
   typeData: Personality = this.personalities[0];
+
 
   constructor(private cdr: ChangeDetectorRef) {
     afterNextRender(() => {
