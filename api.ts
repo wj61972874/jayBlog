@@ -16,6 +16,7 @@ api.get('/dujitang/index', (req, res) => {
         }
     }, function (err: any, response: any, tianapi_data: any) {
         if (err) {
+            console.error("天行数据接口调用失败----", err);
             return res.status(500).json({ error: 'Internal Server Error' });
         }
         // 处理数据

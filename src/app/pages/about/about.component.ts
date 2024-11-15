@@ -41,13 +41,13 @@ export class AboutComponent implements OnInit, AfterViewInit {
   private aboutService = inject(AboutService);
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private cdr: ChangeDetectorRef) {
-
-  }
-
-  ngOnInit(): void {
     afterNextRender(() => {
       this.fetchChickenSoup();
     })
+  }
+
+  ngOnInit(): void {
+
   }
 
   ngAfterViewInit(): void {
