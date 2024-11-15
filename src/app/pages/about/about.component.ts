@@ -1,5 +1,5 @@
 import { isPlatformBrowser, NgClass } from '@angular/common';
-import { afterNextRender, AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, Inject, OnInit, PLATFORM_ID, ViewChild, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, Inject, OnInit, PLATFORM_ID, ViewChild, viewChild } from '@angular/core';
 import { SectionDivinationComponent } from '@app/components/section-divination/section-divination.component';
 import { SectionGameComponent } from '@app/components/section-game/section-game.component';
 import { SectionIdentityComponent } from '@app/components/section-identity/section-identity.component';
@@ -41,13 +41,11 @@ export class AboutComponent implements OnInit, AfterViewInit {
   private aboutService = inject(AboutService);
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private cdr: ChangeDetectorRef) {
-    afterNextRender(() => {
-      this.fetchChickenSoup();
-    })
+
   }
 
   ngOnInit(): void {
-
+    this.fetchChickenSoup();
   }
 
   ngAfterViewInit(): void {
