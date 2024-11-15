@@ -4,7 +4,6 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
-import api from './api'; // 确保路径正确
 import cors from 'cors'; // 引入 cors
 
 // The Express app is exported so that it can be used by serverless Functions.
@@ -27,9 +26,6 @@ export function app(): express.Express {
     console.log(`Request URL: ${req.url}`);
     next();
   });
-
-  // 使用API处理文件
-  server.use('/jayBlogApi', api);
 
   // Serve static files from /browser
   server.get('**', express.static(browserDistFolder, {
