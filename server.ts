@@ -19,7 +19,7 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // 使用API处理文件
-  server.use('/api', api);
+  server.use('/jayBlogApi', api);
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
