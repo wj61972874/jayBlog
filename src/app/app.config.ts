@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import interceptors from '@app/services/interceptor';
+import { provideAngularSvgIcon } from 'angular-svg-icon';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     ...interceptors,
     provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideClientHydration(),
-
+    provideAngularSvgIcon()
   ]
 };

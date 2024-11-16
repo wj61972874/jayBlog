@@ -1,0 +1,27 @@
+<app-sections-container
+  [verticalAlign]="true"
+  [scrollBar]="false"
+  [dots]="false"
+  [className]="'resume-properties-section-container'"
+  [sectionClassName]="'resume-properties-section resume-section-container'"
+  [anchors]="['index', 'introduction', 'skill', 'experience']"
+  [activeClass]="'active'"
+  [sectionPaddingTop]="'0'"
+  [sectionPaddingBottom]="'0'"
+  [shortcutKey]="true"
+  [delay]="1000"
+  [touchable]="true"
+>
+  <app-section>
+    <app-resume-index></app-resume-index>
+  </app-section>
+  <app-section>
+    <app-resume-introduction></app-resume-introduction>
+  </app-section>
+  <app-section>
+    <app-resume-skill></app-resume-skill>
+  </app-section>
+  <app-section>
+    <app-resume-experience></app-resume-experience>
+  </app-section>
+</app-sections-container>

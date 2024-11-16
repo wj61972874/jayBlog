@@ -1,0 +1,17 @@
+<!-- <div
+  [id]="id"
+  [ngClass]="[
+    sectionContext?.prefixCls + '-section',
+    sectionContext?.sectionClassName,
+    className
+  ]"
+  [innerHTML]="
+    verticalAlign || sectionContext?.verticalAlign
+      ? children
+      : renderVerticalAlign()
+  "
+></div> -->
+
+<div [id]="id" [ngStyle]="sectionStyle">
+  <ng-content></ng-content>
+</div>

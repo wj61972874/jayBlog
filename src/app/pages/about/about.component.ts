@@ -1,15 +1,15 @@
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, Inject, OnInit, PLATFORM_ID, ViewChild, viewChild } from '@angular/core';
-import { SectionDivinationComponent } from '@app/components/section-divination/section-divination.component';
-import { SectionGameComponent } from '@app/components/section-game/section-game.component';
-import { SectionIdentityComponent } from '@app/components/section-identity/section-identity.component';
-import { SectionIntroductionComponent } from '@app/components/section-introduction/section-introduction.component';
-import { SectionLocationComponent } from '@app/components/section-location/section-location.component';
-import { SectionMeComponent } from '@app/components/section-me/section-me.component';
-import { SectionOccupationComponent } from '@app/components/section-occupation/section-occupation.component';
-import { SectionPersonalityComponent } from '@app/components/section-personality/section-personality.component';
-import { SectionPictureComponent } from '@app/components/section-picture/section-picture.component';
-import { SectionWordComponent } from '@app/components/section-word/section-word.component';
+import { SectionDivinationComponent } from '@app/components/about/section-divination/section-divination.component';
+import { SectionGameComponent } from '@app/components/about/section-game/section-game.component';
+import { SectionIdentityComponent } from '@app/components/about/section-identity/section-identity.component';
+import { SectionIntroductionComponent } from '@app/components/about/section-introduction/section-introduction.component';
+import { SectionLocationComponent } from '@app/components/about/section-location/section-location.component';
+import { SectionMeComponent } from '@app/components/about/section-me/section-me.component';
+import { SectionOccupationComponent } from '@app/components/about/section-occupation/section-occupation.component';
+import { SectionPersonalityComponent } from '@app/components/about/section-personality/section-personality.component';
+import { SectionPictureComponent } from '@app/components/about/section-picture/section-picture.component';
+import { SectionWordComponent } from '@app/components/about/section-word/section-word.component';
 import { AboutService } from '@app/services/about.service';
 
 @Component({
@@ -26,7 +26,7 @@ import { AboutService } from '@app/services/about.service';
     SectionPersonalityComponent,
     SectionWordComponent,
     SectionPictureComponent,
-    SectionLocationComponent
+    // SectionLocationComponent
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.less'

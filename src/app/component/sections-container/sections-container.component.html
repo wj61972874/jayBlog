@@ -1,0 +1,6 @@
+<div #sectionContainer class="h-screen" [ngClass]="[prefixCls, className]">
+  <div [ngStyle]="containerStyle">
+    <ng-content></ng-content>
+  </div>
+  <!-- <div *ngIf="dots && !scrollBar" [innerHTML]="renderDots()"></div> -->
+</div>

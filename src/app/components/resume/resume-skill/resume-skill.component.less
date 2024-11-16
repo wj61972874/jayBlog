@@ -1,0 +1,69 @@
+.resume_skill_wrapper {
+  .bg_warp_skill {
+    background-image: url("../../../../assets//images/resume/resume_skill_bg.jpeg");
+    .bg_warp_skill_mask {
+      mix-blend-mode: multiply;
+      inset: 0;
+    }
+  }
+  .title-wrapper {
+    .title {
+      margin-bottom: 0;
+      font-size: 48px;
+      color: white;
+    }
+  }
+
+  .skills-wrapper {
+    width: 88%;
+    margin-top: 40px;
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .skill {
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        margin: 20px 0;
+        flex: 0 0 25%;
+
+        .skill-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 160px;
+          height: 160px;
+          background-image: linear-gradient(180deg, white, #f0f0f0);
+          border-radius: 50%;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+          .ant-progress-text {
+            white-space: pre-wrap;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.2;
+          }
+
+          img {
+            width: 80px;
+            height: 80px;
+          }
+
+          &:hover {
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+
+            img {
+              transform: scale(1.08);
+            }
+          }
+        }
+      }
+    }
+  }
+}

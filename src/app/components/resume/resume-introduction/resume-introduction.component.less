@@ -1,0 +1,115 @@
+.bg_warp_introduction {
+  background-image: url("../../../../assets//images/resume/resume_introduction_bg.jpeg");
+  //   background: url("../../../../assets//images/resume/resume_index.png") center
+  //     center / cover no-repeat rgb(102, 102, 102);
+}
+.bg_warp_introduction_mask {
+  mix-blend-mode: multiply;
+  inset: 0;
+}
+
+.title-wrapper {
+  .title {
+    margin-bottom: 0;
+    font-size: 48px;
+    color: white;
+
+    .link-blog {
+      position: relative;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+
+      &::after {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 0.15s;
+        content: "";
+        width: 0;
+        background-color: rgb(255, 255, 255, 0.5);
+        height: 3px;
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        display: block;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .sub-title {
+    position: relative;
+    margin-top: 30px;
+    font-size: 28px;
+    color: white;
+
+    .blinking-cursor {
+      font: inherit;
+      left: 3px;
+      line-height: inherit;
+      opacity: 1;
+      position: relative;
+      top: 0;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+.self-introduction-wrapper {
+  width: 80%;
+  padding: 20px 25px;
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  .introductions {
+    margin-bottom: 0;
+
+    .introduction-item {
+      margin: 10px 0;
+    }
+  }
+}
+
+.self-information-wrapper {
+  width: 80%;
+  padding: 20px 25px;
+  margin-top: 25px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  .information-items {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .information-item {
+      display: flex;
+      flex: 0 0 33.33%;
+      flex-direction: column;
+      align-items: center;
+      width: 33.33%;
+      margin: 10px 0;
+      text-align: center;
+
+      .information-item-icon {
+        width: 32px;
+        height: 32px;
+        color: #777;
+      }
+
+      .information-item-data {
+        margin-top: 5px;
+      }
+    }
+  }
+}

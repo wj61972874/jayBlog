@@ -1,0 +1,58 @@
+<div class="resule_introduction_warp relative h-screen w-full">
+  <div
+    class="bg_warp_introduction absolute left-0 top-0 z-0 h-full w-full bg-center bg-center bg-cover bg-no-repeat"
+  >
+    <div
+      class="bg_warp_introduction_mask absolute left-0 top-0 h-full w-full bg-[linear-gradient(to_right,_#fafafa,_#aaa)]"
+    ></div>
+    <div class="relative z-10 flex h-full flex-col items-center justify-center">
+      <div class="title-wrapper">
+        <h2 class="title">自我介绍</h2>
+      </div>
+      <div class="self-introduction-wrapper">
+        <ol class="introductions">
+          <li class="introduction-item">
+            对前端方面有着浓厚的兴趣，
+            这几年来的前端工作经验，使我对前端技术的热情高涨，实战方面得到提升，希望能够在前端这条路上一直走下去
+          </li>
+          <li class="introduction-item">
+            做人诚信，做事踏实，性格有点内向，却是一名典型的实干派；
+          </li>
+          <li class="introduction-item">
+            有较强的动手能力，适应力强，在工作和业余时间中，不断提高自己，适应工作的需要；
+          </li>
+          <li class="introduction-item">
+            对工作认真负责， 能 在规定的时间内保质保量的完成任务；
+          </li>
+          <li class="introduction-item">学习能力强，前端技术主要在于自学。</li>
+        </ol>
+      </div>
+      <div class="self-information-wrapper">
+        <ul class="information-items">
+          @for (item of information; track $index) {
+          <li class="information-item">
+            <!-- <LazyImage
+                    class="information-item-icon"
+                    src={`${getRoutePrefix()}/images/resume/introduction/${type}.svg`}
+                    alt=""
+                  /> -->
+            <svg-icon
+              [src]="
+                routePrefix +
+                '/assets/images/resume/introduction/' +
+                item.type +
+                '.svg'
+              "
+              [svgStyle]="{ 'width.px': 36, 'height.px': 36 }"
+            ></svg-icon>
+
+            <div class="information-item-data break-all">
+              {{ item.value }}
+            </div>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

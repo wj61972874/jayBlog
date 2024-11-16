@@ -1,0 +1,24 @@
+<div class="resume_skill_wrapper relative h-[100vh] w-full">
+  <div
+    class="bg_warp_skill absolute left-0 top-0 z-0 h-full w-full bg-center bg-center bg-cover bg-no-repeat"
+  >
+    <div
+      class="bg_warp_skill_mask absolute left-0 top-0 h-full w-full bg-[linear-gradient(to_right,_#fafafa,_#aaa)]"
+    ></div>
+    <div class="relative z-10 flex h-full flex-col items-center justify-center">
+      <div class="title-wrapper">
+        <h2 class="title">技能</h2>
+      </div>
+
+      <div class="skills-wrapper">
+        <ul class="skills">
+          @for (item of skills; track $index) {
+          <li [ngClass]="['skill', 'skill-' + item.type]">
+            {{ item.type }}
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

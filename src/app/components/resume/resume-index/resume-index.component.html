@@ -1,0 +1,75 @@
+<div class="resule_index_warp relative h-screen w-full">
+  <div
+    class="bg_warp_index absolute left-0 top-0 z-0 h-full w-full bg-[#888] bg-center bg-center bg-cover bg-no-repeat"
+  >
+    <div
+      class="bg_warp_index_mask absolute left-0 top-0 h-full w-full bg-[linear-gradient(to_right,_#fafafa,_#aaa)]"
+    ></div>
+    <div
+      class="absolute left-0 top-0 z-10 h-full w-full text-center text-white font-semibold flex justify-center items-center px-[60px]"
+    >
+      <div class="max-w-[620px] mx-auto flex flex-col items-center">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+        >
+          <a href="#" class="avatar_hover relative block w-[120px] h-[120px]">
+            <img
+              src="../../../../assets/images/resume/resule_avatar.png"
+              class="inner_img absolute top-0 left-0 w-full h-full rounded-[50%]"
+            />
+            <div
+              class="outter_img absolute top-0 left-0 w-full h-full transition-transform duration-500 ease-in-out"
+            >
+              <img
+                src="../../../../assets/images/resume/outter_avatar.jpg"
+                class="w-full h-full rounded-[50%] border-2 border-white border-double"
+              />
+            </div>
+          </a>
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="50"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+          class="text-2xl mt-4"
+        >
+          汪杰
+        </div>
+        <div class="text-2xl mt-4">
+          <app-typewriter
+            [text]="
+              '曾经的梦想，结果都让别人实现了；以后的梦想，也该轮到自己来完成了！'
+            "
+            [typeSpeed]="100"
+            [backSpeed]="50"
+            [loop]="true"
+          ></app-typewriter>
+        </div>
+        <div class="mt-4 flex">
+          @for (item of socialAccounts; track $index) {
+          <div class="ml-[50px] social_icon">
+            <a
+              [href]="item.link"
+              target="_blank"
+              rel="noopener noreferrer external nofollow"
+              title="杰哥的社交账号-{{ item.title }}"
+            >
+              <svg-icon
+                [src]="item.icon"
+                [svgStyle]="{ 'width.px': 36, 'height.px': 36 }"
+              ></svg-icon>
+            </a>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
