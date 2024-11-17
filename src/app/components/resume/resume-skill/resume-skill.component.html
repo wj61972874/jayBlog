@@ -13,9 +13,65 @@
       <div class="skills-wrapper">
         <ul class="skills">
           @for (item of skills; track $index) {
+
           <li [ngClass]="['skill', 'skill-' + item.type]">
-            {{ item.type }}
+            <div
+              nz-popover
+              [nzPopoverContent]="contentTemplate"
+              nzPopoverTrigger="hover"
+            >
+              <!-- <div
+                *ngTemplateOutlet="contentTemplate; context: item.contexts"
+              ></div> -->
+              <div
+                class="skill-wrapper group relative flex items-center bg-white bg-[length:86px_86px] bg-center bg-no-repeat transition-all hover:bg-[length:92px_92px]"
+                [ngStyle]="{
+                  'background-image':
+                    'url(' +
+                    routePrefix +
+                    '/assets/images/resume/skills/' +
+                    item.type +
+                    '.svg)'
+                }"
+              >
+                <div
+                  class="absolute inset-0 bottom-0 left-0 right-0 top-0 hidden h-full w-full rounded-[50%] bg-[linear-gradient(to_right,_#eee,_#aaa)] mix-blend-multiply group-hover:block"
+                ></div>
+                <div class="mx-[5px] hidden w-full group-hover:block">
+                  <nz-progress
+                    [nzPercent]="item.percent"
+                    [nzFormat]="getFormat"
+                    nzType="circle"
+                    class="flex justify-center text-white"
+                  ></nz-progress>
+                </div>
+              </div>
+            </div>
           </li>
+          <ng-template #contentTemplate>
+            <div class="skill-popover-wrapper">
+              <h5 class="skill-popover-title text-center">
+                {{ item.popover }}
+              </h5>
+              <div class="mb-[8px]">
+                <label class="mb-1 block text-base font-medium">熟练度: </label>
+                <div class="skill-popover-progress">
+                  <nz-progress [nzPercent]="item.percent"></nz-progress>
+                </div>
+              </div>
+              <div>
+                <label class="mb-1 block text-base font-medium">技能点: </label>
+                <ul class="mb-0 ml-4 list-disc gap-y-1">
+                  @for (context of item.contexts; track $index) {
+                  <li class="mb-0 max-w-[320px]" key="{text}">
+                    {{ context }}
+                  </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </ng-template>
+
           }
         </ul>
       </div>

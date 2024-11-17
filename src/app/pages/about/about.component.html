@@ -1,4 +1,13 @@
-<div class="flex h-full min-h-[100vh] w-full flex-col">
+<div class="relative flex h-full min-h-[100vh] w-full flex-col">
+  <div
+    class="absolute right-[24px] top-[24px] w-[36px] h-[36px] z-10 cursor-pointer"
+    (click)="goJayHome()"
+  >
+    <img
+      class="w-full h-full"
+      [src]="routePrefix + '/assets/images/home_icon.svg'"
+    />
+  </div>
   <main class="flex flex-1 grow-[1] flex-col">
     <div class="relative w-full bg-black text-white/75">
       <header

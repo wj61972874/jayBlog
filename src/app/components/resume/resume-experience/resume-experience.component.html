@@ -1,1 +1,72 @@
-<p>resume-experience works!</p>
+<div class="resume_experience_wrapper relative h-[100vh] w-full">
+  <div
+    class="bg_warp_experience absolute left-0 top-0 z-0 h-full w-full bg-center bg-center bg-cover bg-no-repeat"
+  >
+    <div
+      class="bg_warp_experience_mask absolute left-0 top-0 h-full w-full bg-[linear-gradient(to_right,_#fafafa,_#aaa)]"
+    ></div>
+
+    <div class="relative z-10 flex h-full flex-col items-center justify-center">
+      <div class="title-wrapper">
+        <div class="title">工作经历</div>
+      </div>
+      <div class="experiences-wrapper">
+        <!-- <app-carousel> -->
+        <span
+          nz-icon
+          nzType="left"
+          nzTheme="outline"
+          class="arrow-middle"
+          (click)="carousel.pre()"
+        ></span>
+        <nz-carousel #carousel>
+          @for (experience of experiences; track $index) {
+          <div
+            class="experience-wrapper bg-white min-h-[512px]"
+            nz-carousel-content
+          >
+            <div class="experience-item">
+              <!--渲染经历-公司图片-->
+              <div class="relative w-[140px]">
+                <div
+                  class="flex w-full items-center justify-center absolute top-1/2 -translate-y-1/2"
+                >
+                  <img
+                    [src]="routePrefix + experience.image"
+                    class="max-w-[80px]"
+                  />
+                </div>
+              </div>
+              <!--渲染经历-工作简介-->
+              <div
+                class="relative flex-1 before:absolute before:bottom-0 before:left-0 before:top-0 before:w-[1px] before:bg-[#e8e8e8] before:content-['']"
+              >
+                <div class="relative w-full px-[30px] h-full">
+                  <h5 class="mb-[20px] text-[20px]">
+                    {{ experience.company }}
+                  </h5>
+                  <div class="mb-[15px] text-[18px]">{{ experience.time }}</div>
+                  <div class="mb-[15px] text-[18px]">{{ experience.post }}</div>
+                  <ul class="mb-[0] list-decimal pl-[20px] text-[16px]">
+                    @for (work of experience.works; track $index) {
+                    <li class="leading-[1.6]">{{ work }}</li>
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </nz-carousel>
+        <span
+          nz-icon
+          nzType="right"
+          nzTheme="outline"
+          class="arrow-middle"
+          (click)="carousel.next()"
+        ></span>
+        <!-- </app-carousel> -->
+      </div>
+    </div>
+  </div>
+</div>

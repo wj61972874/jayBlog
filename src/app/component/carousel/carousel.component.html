@@ -1,0 +1,32 @@
+<!-- <div
+  [ngClass]="[
+    'custom-carousel-container',
+    className,
+    { 'with-arrow': allowArrow }
+  ]"
+> -->
+<div class="custom-carousel-container">
+  <span
+    nz-icon
+    nzType="left"
+    nzTheme="outline"
+    class="arrow-middle"
+    (click)="carousel.pre()"
+  ></span>
+
+  <nz-carousel #carousel [nzEffect]="effect">
+    <ng-content></ng-content>
+    <!-- @for (index of array; track index) {
+    <div nz-carousel-content>
+      <h3>{{ index }}</h3>
+    </div>
+    } -->
+  </nz-carousel>
+  <span
+    nz-icon
+    nzType="right"
+    nzTheme="outline"
+    class="arrow-middle"
+    (click)="carousel.next()"
+  ></span>
+</div>

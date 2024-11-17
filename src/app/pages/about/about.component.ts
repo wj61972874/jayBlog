@@ -1,5 +1,6 @@
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, inject, Inject, OnInit, PLATFORM_ID, ViewChild, viewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { SectionDivinationComponent } from '@app/components/about/section-divination/section-divination.component';
 import { SectionGameComponent } from '@app/components/about/section-game/section-game.component';
 import { SectionIdentityComponent } from '@app/components/about/section-identity/section-identity.component';
@@ -11,6 +12,7 @@ import { SectionPersonalityComponent } from '@app/components/about/section-perso
 import { SectionPictureComponent } from '@app/components/about/section-picture/section-picture.component';
 import { SectionWordComponent } from '@app/components/about/section-word/section-word.component';
 import { AboutService } from '@app/services/about.service';
+import { DomainService } from '@app/services/domain.service';
 
 @Component({
   selector: 'app-about',
@@ -35,12 +37,14 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   blurBanner: boolean = false;
   chickenSoup: string = '';
+  domainService = inject(DomainService);
+  routePrefix = this.domainService.getDomain();
 
   @ViewChild('aboutContent') aboutContentEl: ElementRef | undefined;
 
   private aboutService = inject(AboutService);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private cdr: ChangeDetectorRef) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private cdr: ChangeDetectorRef, private router: Router) {
 
   }
 
@@ -78,6 +82,9 @@ export class AboutComponent implements OnInit, AfterViewInit {
     this.aboutService.apiGetDujitangIndex().subscribe((res) => {
       this.chickenSoup = res?.content || '';
     });
+  }
 
+  goJayHome() {
+    this.router.navigate(['/home']);
   }
 }

@@ -1,0 +1,141 @@
+.resume_experience_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .bg_warp_experience {
+    background-image: url("../../../../assets//images/resume/resume_experience_bg.jpg");
+    .bg_warp_experience_mask {
+      mix-blend-mode: multiply;
+      inset: 0;
+    }
+  }
+  .title-wrapper {
+    .title {
+      margin-bottom: 0;
+      font-size: 48px;
+      color: white;
+    }
+  }
+
+  .experiences-wrapper {
+    width: 750px;
+    height: 360px;
+    margin: 30px auto 0;
+
+    position: relative;
+    // background-color: @white;
+    // border-radius: 5px;
+    // box-shadow: 0 25px 20px @black-10;
+    transition: transform 0.3s linear;
+
+    .custom-carousel-container {
+      .ant-carousel {
+        .slick-slider {
+          .slick-dots {
+            bottom: -50px;
+          }
+        }
+      }
+    }
+
+    .experience-wrapper {
+      height: 100%;
+      padding: 20px 0;
+      display: block !important;
+      .experience-item {
+        display: flex;
+        height: 100%;
+
+        .experience-image-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 140px;
+
+          .company-image {
+            max-width: 80px;
+          }
+        }
+
+        .experience-content-wrapper {
+          position: relative;
+          flex: 1;
+          padding: 0 30px;
+
+          &::before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 1px;
+            content: "";
+            background-color: #e8e8e8;
+          }
+
+          .company-name {
+            margin-bottom: 20px;
+            font-size: 20px;
+          }
+
+          .company-post,
+          .company-time {
+            margin-bottom: 15px;
+            font-size: 18px;
+          }
+
+          .company-works {
+            padding-left: 20px;
+            margin-bottom: 0;
+            font-size: 16px;
+            list-style: auto;
+
+            .company-work {
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+    }
+
+    > .arrow-middle {
+      position: absolute;
+      top: 50%;
+      // display: none;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.5 ease;
+      transform: translateY(-50%);
+
+      border: 3px solid;
+      border-radius: 50%;
+      padding: 2px;
+
+      &.anticon:first-child {
+        left: -80px;
+      }
+
+      &.anticon:last-child {
+        right: -80px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.arrow-bottom {
+        top: 100%;
+        transform: translateY(-150%);
+      }
+    }
+  }
+}
+:host ::ng-deep .ant-carousel {
+  overflow: unset !important;
+}
+
+:host ::ng-deep .slick-dots-bottom {
+  bottom: -40px !important;
+}

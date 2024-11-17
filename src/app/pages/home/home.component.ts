@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { ArticlesComponent } from '../articles/articles.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterLink, ArticlesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less'
 })
