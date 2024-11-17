@@ -11,12 +11,12 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'articles',
