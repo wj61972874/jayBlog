@@ -23,7 +23,15 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "less",
-            "assets": ["src/assets", "src/public"],
+            "assets": [
+              "src/assets",
+              "src/public",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/link-svg/",
+                "output": "/assets/"
+              }
+            ],
             "styles": ["src/styles.less", "node_modules/aos/dist/aos.css"],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -43,7 +51,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumError": "10kB"
                 }
               ],
               "outputHashing": "all",

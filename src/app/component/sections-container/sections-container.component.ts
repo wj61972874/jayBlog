@@ -118,23 +118,19 @@ export class SectionsContainerComponent implements AfterViewInit {
 
   @HostListener('window:hashchange', ['$event'])
   onHashChange(event: HashChangeEvent) {
-    console.log('Hash changed:', event);
     this.handleHashChange();
   }
 
   // 使用 lodash 的 throttle 函数对 onWheelEvent 方法进行节流
   throttledOnWheelEvent = throttle((event: WheelEvent) => {
-    console.log('throttledOnWheelEvent===进来了:');
     this.checkSectionPosition(event);
   }, 1000); // 1秒节流时间
 
 
   checkSectionPosition(event: any) {
-    console.log('event===:', event, this.stateActiveSectionRef);
     const e = window.event || event;
     const delta = Math.max(-1, Math.min(1, e.wheelDelta || -e.detail));
     const activeSection = this.stateActiveSectionRef - delta;
-    console.log('activeSection===:', activeSection, this.stateActiveSectionRef, delta);
     if (this.scrollingStartedRef || activeSection < 0 || activeSection === this.anchors.length) {
       return;
     }
@@ -189,7 +185,6 @@ export class SectionsContainerComponent implements AfterViewInit {
 
   // hash发生改变时，修改当前显示的 Section 索引，设置Section需要偏移的距离
   handleHashChange() {
-    console.log('handleHashChange===:', window.location.hash);
     const hash = window.location.hash.slice(1);
     // eslint-disable-next-line @typescript-eslint/no-shadow
     const activeSection = this.anchors.indexOf(hash);

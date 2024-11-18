@@ -5,6 +5,7 @@ import { SectionsContainerComponent } from '@app/component/sections-container/se
 import { ResumeExperienceComponent } from '@app/components/resume/resume-experience/resume-experience.component';
 import { ResumeIndexComponent } from '@app/components/resume/resume-index/resume-index.component';
 import { ResumeIntroductionComponent } from '@app/components/resume/resume-introduction/resume-introduction.component';
+import { ResumeProjectComponent } from '@app/components/resume/resume-project/resume-project.component';
 import { ResumeSkillComponent } from '@app/components/resume/resume-skill/resume-skill.component';
 import { throttle } from 'lodash';
 
@@ -17,29 +18,12 @@ import { throttle } from 'lodash';
     ResumeIndexComponent,
     ResumeIntroductionComponent,
     ResumeSkillComponent,
-    ResumeExperienceComponent
+    ResumeExperienceComponent,
+    ResumeProjectComponent
   ],
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.less']
 })
 export class ResumeComponent {
-
-  items = [
-    {
-      id: 'education',
-      title: 'Education',
-      content: 'B.S. in Computer Science, University of California, Riverside, 2016'
-    },
-    {
-      id: 'experience',
-      title: 'Experience',
-      content: 'Software Engineer, Google, 2016 - Present'
-    },
-    {
-      id: 'skills',
-      title: 'Skills',
-      content: 'JavaScript, Angular, React, Node.js, MongoDB, SQL'
-    },
-  ];
 
 }

@@ -1,0 +1,95 @@
+<div class="resume_project_wrapper relative h-[100vh] w-full">
+  <div
+    class="bg_warp_project absolute left-0 top-0 z-0 h-full w-full bg-center bg-center bg-cover bg-no-repeat flex flex-col items-center"
+  >
+    <div
+      class="bg_warp_project_mask absolute left-0 top-0 h-full w-full bg-[linear-gradient(to_right,_#fafafa,_#aaa)]"
+    ></div>
+    <div class="relative z-10 flex h-full flex-col items-center justify-center">
+      <div class="title-wrapper">
+        <div class="title">项目经历</div>
+      </div>
+      <div class="projects-wrapper">
+        <swiper-container init="false" #swiper class="!w-screen">
+          @for (project of projects; track $index) {
+          <swiper-slide
+            class="rounded-md overflow-hidden !w-[750px] swiper-slide"
+          >
+            <div
+              class="project-wrapper group relative overflow-hidden bg-white !h-[450px] w-[750px] rounded-md shadow-[inset_0_0_10px_#ddd]"
+            >
+              <div class="project-item-wrapper pb-[20px] pt-[20px]">
+                <div class="project-item">
+                  <div class="project-image-wrapper">
+                    <img
+                      class="project-image"
+                      [src]="routePrefix + project.image"
+                      alt=""
+                    />
+                  </div>
+                  <div class="project-content-wrapper">
+                    <div class="project-name">
+                      <span> {{ project.name }}({{ project.company }})</span>
+                    </div>
+                    <div class="project-time">{{ project.time }}</div>
+                    <div class="project-profile">
+                      {{ project.profile }}
+                    </div>
+                    <ul class="project-duties mb-0 list-decimal pl-[20px]">
+                      @for (duty of project.duties; track $index) {
+                      <li class="project-duty">
+                        <div>{{ duty }}</div>
+                      </li>
+                      }
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <ul
+                class="project-actions-wrapper absolute bottom-0 left-0 flex h-0 w-full overflow-y-hidden opacity-0 transition-all group-hover:h-[36px] group-hover:opacity-100"
+              >
+                <li class="project-action">
+                  <a
+                    class="project-link"
+                    [ngStyle]="{
+                      cursor: project.link ? 'pointer' : 'not-allowed'
+                    }"
+                    [href]="project.link"
+                    target="_blank"
+                    rel="noopener noreferrer external nofollow"
+                    [title]="'汪杰的项目-' + project.name + '-链接地址'"
+                    (click)="onLinkClick($event, project.link)"
+                  >
+                    <span nz-icon nzType="paper-clip" nzTheme="outline"></span>
+                  </a>
+                </li>
+                <li
+                  class="project-action cursor-pointer"
+                  (click)="onOpenVisibleSummary(project.summary)"
+                >
+                  <span nz-icon nzType="file" nzTheme="outline"></span> 
+                </li>
+              </ul>
+            </div>
+          </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+    </div>
+  </div>
+</div>
+<nz-modal
+  [(nzVisible)]="summaryModalVisable"
+  nzTitle="项目总结"
+  (nzOnCancel)="onCloseVisibleSummary()"
+  (nzOnOk)="onCloseVisibleSummary()"
+>
+  <ng-container *nzModalContent>
+    {{ summaryContent }}
+  </ng-container>
+  <div *nzModalFooter>
+    <button nz-button nzType="primary" (click)="onCloseVisibleSummary()">
+      确定
+    </button>
+  </div>
+</nz-modal>

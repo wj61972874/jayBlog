@@ -8,13 +8,11 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 @Component({
   selector: 'app-resume-experience',
   standalone: true,
-  imports: [CustomCarouselComponent, NzIconModule, NzCarouselModule],
+  imports: [NzIconModule, NzCarouselModule],
   templateUrl: './resume-experience.component.html',
   styleUrl: './resume-experience.component.less'
 })
 export class ResumeExperienceComponent {
-  array = [1, 2, 3, 4];
-
 
   experiences: any[] = []
   resumeContextService = inject(ResumeContextService);
