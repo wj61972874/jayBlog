@@ -1,4 +1,4 @@
-export const domain = 'http://47.100.236.149';
+export const domain = 'http://jaygogo-aigc.top';
 
 export const environment = {
     production: true,

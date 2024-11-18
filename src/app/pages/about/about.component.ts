@@ -80,7 +80,8 @@ export class AboutComponent implements OnInit, AfterViewInit {
   fetchChickenSoup() {
     // 在这里调用服务获取数据
     this.aboutService.apiGetDujitangIndex().subscribe((res) => {
-      this.chickenSoup = res?.content || '';
+      console.log("res=========", res);
+      this.chickenSoup = res?.content || '他喜欢你素颜，必须是素颜好看。';
     });
   }
 

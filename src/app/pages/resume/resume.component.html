@@ -1,30 +1,64 @@
-<app-sections-container
-  [verticalAlign]="true"
-  [scrollBar]="false"
-  [dots]="false"
-  [className]="'resume-properties-section-container'"
-  [sectionClassName]="'resume-properties-section resume-section-container'"
-  [anchors]="['index', 'introduction', 'skill', 'experience', 'project']"
-  [activeClass]="'active'"
-  [sectionPaddingTop]="'0'"
-  [sectionPaddingBottom]="'0'"
-  [shortcutKey]="true"
-  [delay]="1000"
-  [touchable]="true"
->
-  <app-section>
-    <app-resume-index></app-resume-index>
-  </app-section>
-  <app-section>
-    <app-resume-introduction></app-resume-introduction>
-  </app-section>
-  <app-section>
-    <app-resume-skill></app-resume-skill>
-  </app-section>
-  <app-section>
-    <app-resume-experience></app-resume-experience>
-  </app-section>
-  <app-section>
-    <app-resume-project></app-resume-project>
-  </app-section>
-</app-sections-container>
+<article>
+  <app-sections-container
+    [verticalAlign]="true"
+    [scrollBar]="false"
+    [dots]="false"
+    [className]="'resume-properties-section-container'"
+    [sectionClassName]="'resume-properties-section resume-section-container'"
+    [anchors]="[
+      'index',
+      'introduction',
+      'skill',
+      'experience',
+      'project',
+      'article'
+    ]"
+    [activeClass]="'active'"
+    [sectionPaddingTop]="'0'"
+    [sectionPaddingBottom]="'0'"
+    [shortcutKey]="true"
+    [delay]="1000"
+    [touchable]="true"
+  >
+    <app-section>
+      <app-resume-index></app-resume-index>
+    </app-section>
+    <app-section>
+      <app-resume-introduction></app-resume-introduction>
+    </app-section>
+    <app-section>
+      <app-resume-skill></app-resume-skill>
+    </app-section>
+    <app-section>
+      <app-resume-experience></app-resume-experience>
+    </app-section>
+    <app-section>
+      <app-resume-project></app-resume-project>
+    </app-section>
+    <app-section>
+      <app-resume-article></app-resume-article>
+    </app-section>
+  </app-sections-container>
+
+  <div
+    class="pdf-wrapper"
+    nz-button
+    nz-popover
+    nzPopoverPlacement="top"
+    nzType="primary"
+    nzPopoverContent="PDF简历"
+  >
+    <a
+      class="link-pdf"
+      [href]="routePrefix + '/static/pdf/jay_resume.pdf'"
+      target="_blank"
+      title="汪杰的PDF简历"
+      rel="noreferrer"
+    >
+      <img
+        class="link-pdf"
+        [src]="routePrefix + '/assets/images/file-pdf.svg'"
+      />
+    </a>
+  </div>
+</article>

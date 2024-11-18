@@ -1,0 +1,34 @@
+<div class="resume_article_wrapper relative h-[100vh] w-full">
+  <div
+    class="bg_warp_article absolute left-0 top-0 z-0 h-full w-full bg-center bg-center bg-cover bg-no-repeat"
+  >
+    <div
+      class="bg_warp_article_mask absolute left-0 top-0 h-full w-full bg-[linear-gradient(to_right,_#fafafa,_#aaa)]"
+    ></div>
+    <div class="resume-article-content">
+      <div class="title-wrapper">
+        <div class="title">
+          <a
+            class="link-blog"
+            [href]="blogLink"
+            target="_blank"
+            rel="noopener noreferrer external nofollow"
+            title="汪杰的个人博客"
+          >
+            Jay的博客小屋
+          </a>
+        </div>
+        <div class="text-2xl mt-4">
+          <app-typewriter
+            [text]="
+              '曾经的梦想，结果都让别人实现了；以后的梦想，也该轮到自己来完成了！'
+            "
+            [typeSpeed]="100"
+            [backSpeed]="50"
+            [loop]="true"
+          ></app-typewriter>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

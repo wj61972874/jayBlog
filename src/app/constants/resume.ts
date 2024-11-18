@@ -284,4 +284,8 @@ export class ResumeContextService {
             }
         ];
     }
+
+    getBlogLink() {
+        return 'http://jaygogo-aigc.top/home';
+    }
 }
