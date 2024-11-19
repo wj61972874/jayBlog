@@ -20,7 +20,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     ...interceptors,
     provideHttpClient(withFetch(), withInterceptorsFromDi()),
-    provideClientHydration(),
     provideAngularSvgIcon(),
     provideNzI18n(zh_CN),
     importProvidersFrom(FormsModule),
@@ -38,5 +37,6 @@ export const appConfig: ApplicationConfig = {
           },
         },
       }),
+    provideClientHydration(),
   ]
 };

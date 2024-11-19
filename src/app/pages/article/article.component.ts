@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { afterNextRender, Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '@app/services/article.service';
 import { MarkdownModule } from 'ngx-markdown';
@@ -12,29 +13,18 @@ import { MarkdownModule } from 'ngx-markdown';
 })
 export class ArticleComponent {
 
-
-  markdown = `## Markdown __rulez__!
----
-
-### Syntax highlight
-\`\`\`typescript
-const language = 'typescript';
-\`\`\`
-
-### Lists
-1. Ordered list
-2. Another bullet point
-   - Unordered list
-   - Another unordered bullet
-
-### Blockquote
-> Blockquote to the max`;
-
   markdownSrc: string = '';
 
   articleService = inject(ArticleService);
 
-  constructor(private route: ActivatedRoute) { }
+  isBrowser: boolean = false;
+
+  constructor(private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: Object) {
+    afterNextRender(() => {
+      // this.isBrowser = isPlatformBrowser(this.platformId);
+      this.isBrowser = isPlatformBrowser(this.platformId);
+    })
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -52,4 +42,9 @@ const language = 'typescript';
     });
   }
 
+  // isBrowser(): boolean {
+  //   const isBrowser = isPlatformBrowser(this.platformId);
+  //   console.log('isBrowser======', isBrowser);
+  //   return isBrowser;
+  // }
 }

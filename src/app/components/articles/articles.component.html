@@ -4,7 +4,7 @@
     <div class="flex-1">
       @for (article of articles; track $index) {
       <div
-        class="w-full bg-white rounded-[10px] p-[20px] border-[1px] border-[#e8e2f582]"
+        class="w-full bg-white rounded-[10px] p-[20px] border-[1px] border-[#e8e2f582] cursor-pointer"
         (click)="goToArticle(article)"
       >
         <div class="text-lg">{{ article.title }}</div>
