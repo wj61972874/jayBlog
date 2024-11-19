@@ -1,0 +1,18 @@
+<article class="article_page flex justify-center items-center p-[24px]">
+  <div class="flex w-full mt-[24px]">
+    <div class="w-[240px] mr-[40px]"></div>
+    <div class="flex-1">
+      @for (article of articles; track $index) {
+      <div
+        class="w-full bg-white rounded-[10px] p-[20px] border-[1px] border-[#e8e2f582]"
+        (click)="goToArticle(article)"
+      >
+        <div class="text-lg">{{ article.title }}</div>
+        <div class="text-sm text-[#7087a7] my-1.5">
+          {{ article.description }}
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</article>

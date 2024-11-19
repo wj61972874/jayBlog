@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { ArticlesComponent } from '../articles/articles.component';
+import { ArticlesComponent } from '@app/components/articles/articles.component';
 
 @Component({
   selector: 'app-home',

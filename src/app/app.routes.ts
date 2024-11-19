@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ArticlesComponent } from './pages/articles/articles.component';
 import { ResumeComponent } from './pages/resume/resume.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 export const routes: Routes = [
   {
@@ -16,12 +16,26 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
-    path: 'articles',
-    component: ArticlesComponent
+    path: 'article/:id',
+    component: ArticleComponent,
   },
+  // {
+  //   path: 'articles',
+  //   // component: ArticlesComponent
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: ArticlesComponent
+  //     },
+  //     {
+  //       path: 'detail/:id',
+  //       component: ArticleDetailComponent
+  //     }
+  //   ]
+  // },
   {
     path: 'resume',
     component: ResumeComponent
