@@ -21,36 +21,30 @@ export class ArticleComponent {
 
   constructor(private route: ActivatedRoute, private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
 
-    this.isServer = isPlatformServer(this.platformId);
-
-    // if (this.isServer) {
-    //   this.route.paramMap.subscribe(params => {
-    //     const articleId = params.get('id');
-    //     // 你可以在这里使用 articleId 进行其他操作，例如从服务中获取文章数据
-    //     console.log("articleId===", articleId);
-    //     // this.apiGetArticleMarkdownById(articleId);
-    //   });
-    // } else {
-    // afterNextRender(() => {
-    // this.isBrowser = isPlatformBrowser(this.platformId);
-
-    this.route.paramMap.subscribe(params => {
-      const articleId = params.get('id');
-      // 你可以在这里使用 articleId 进行其他操作，例如从服务中获取文章数据
-      console.log("articleId===", articleId);
-      // this.apiGetArticleMarkdownById(articleId);
-      const navigation = this.router.getCurrentNavigation();
-      if (navigation?.extras?.state) {
-        this.markdownSrc = navigation.extras.state['markdownSrc'];
-      }
-    });
-    // })
-    // }
-
+    if (isPlatformBrowser(this.platformId)) {
+      this.route.paramMap.subscribe(params => {
+        const articleId = params.get('id');
+        // 你可以在这里使用 articleId 进行其他操作，例如从服务中获取文章数据
+        console.log("articleId===", articleId);
+        // this.apiGetArticleMarkdownById(articleId);
+        const navigation = this.router.getCurrentNavigation();
+        if (navigation?.extras?.state) {
+          this.markdownSrc = navigation.extras.state['markdownSrc'];
+        }
+      });
+    }
 
   }
 
   ngOnInit(): void {
+    if (isPlatformServer(this.platformId)) {
+      this.route.paramMap.subscribe(params => {
+        const articleId = params.get('id');
+        // 你可以在这里使用 articleId 进行其他操作，例如从服务中获取文章数据
+        console.log("articleId===", articleId);
+        this.apiGetArticleMarkdownById(articleId);
+      });
+    }
 
   }
 
@@ -61,9 +55,4 @@ export class ArticleComponent {
     });
   }
 
-  // isBrowser(): boolean {
-  //   const isBrowser = isPlatformBrowser(this.platformId);
-  //   console.log('isBrowser======', isBrowser);
-  //   return isBrowser;
-  // }
 }
