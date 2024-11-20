@@ -1,14 +1,14 @@
 [
   {
-    "title": "H5 移动端调试工具汇总",
-    "description": "因为移动端操作系统分为 `iOS` 和 `Android` 两派，所以本文的调试技巧也会按照不同的系统来区分。寻找最合适高效的方式，才能让你事半功倍...",
-    "markdownSrc": "http://jaygogo-aigc.top/static/articles/mobile-debugging-tools.md",
-    "tag": ["javascript", "mobile", "debugging"]
+    "title": "MacOS 和 Linux 的 Homebrew 安装与卸载",
+    "description": "macOS（或 Linux）缺失的软件包的管理器",
+    "markdownSrc": "http://jaygogo-aigc.top/static/articles/homebrew.md",
+    "tag": ["homebrew"]
   },
   {
-    "title": "使用 AbortController 实现异步操作控制",
-    "description": "在 `JavaScript` 中，我们经常需要执行一些异步操作，例如发起网络请求、执行定时任务等。然而，有时候我们希望能够在某些条件下中止这些异步...",
-    "markdownSrc": "http://jaygogo-aigc.top/static/articles/abort-controller.md",
-    "tag": ["html5", "javascript"]
+    "title": "JavaScript 批量请求管理",
+    "description": "在现代前端开发中，高效地管理多个并发请求至关重要。无论是从 API 获取数据、处理用户交互，还是处理文件，管理和限制同时进行的请求数量都能显著影响应用的性能和可靠性。在这篇博客文章中，我们将深入探讨使用 JavaScript 管理并发请求的细节，重点介绍如何实现限制并发请求数量的实用方案...",
+    "markdownSrc": "http://jaygogo-aigc.top/static/articles/limit_batch_request.md",
+    "tag": ["javascript"]
   }
 ]
