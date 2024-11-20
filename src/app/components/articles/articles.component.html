@@ -1,10 +1,18 @@
 <article class="article_page flex justify-center items-center p-[24px]">
   <div class="flex w-full mt-[24px]">
-    <div class="w-[240px] mr-[40px]"></div>
+    <div
+      class="w-[240px] mr-[40px] bg-white rounded-[10px] border-[1px] border-[#e8e2f582]"
+    >
+      <div class="px-[24px] py-[12px]">
+        @for (article of articles; track $index) {
+        <div class="cursor-pointer mb-[10px]">{{ article.title }}</div>
+        }
+      </div>
+    </div>
     <div class="flex-1">
       @for (article of articles; track $index) {
       <div
-        class="w-full bg-white rounded-[10px] p-[20px] border-[1px] border-[#e8e2f582] cursor-pointer"
+        class="w-full bg-white rounded-[10px] p-[20px] mb-[24px] border-[1px] border-[#e8e2f582] cursor-pointer"
         (click)="goToArticle(article)"
       >
         <div class="text-lg">{{ article.title }}</div>
