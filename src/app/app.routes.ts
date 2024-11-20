@@ -3,11 +3,12 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { BrowserOnlyGuard } from './guards/browser-only.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/about',
+    component: HomeComponent,
     pathMatch: 'full'
   },
   {
@@ -22,20 +23,6 @@ export const routes: Routes = [
     path: 'article/:id',
     component: ArticleComponent,
   },
-  // {
-  //   path: 'articles',
-  //   // component: ArticlesComponent
-  //   children: [
-  //     {
-  //       path: '',
-  //       component: ArticlesComponent
-  //     },
-  //     {
-  //       path: 'detail/:id',
-  //       component: ArticleDetailComponent
-  //     }
-  //   ]
-  // },
   {
     path: 'resume',
     component: ResumeComponent
