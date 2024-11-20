@@ -1,6 +1,6 @@
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { afterNextRender, Component, Inject, inject, PLATFORM_ID } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '@app/services/article.service';
 import { MarkdownModule } from 'ngx-markdown';
 
@@ -17,22 +17,41 @@ export class ArticleComponent {
 
   articleService = inject(ArticleService);
 
-  isBrowser: boolean = false;
+  isServer: boolean = false;
 
-  constructor(private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: Object) {
-    afterNextRender(() => {
-      // this.isBrowser = isPlatformBrowser(this.platformId);
-      this.isBrowser = isPlatformBrowser(this.platformId);
-    })
-  }
+  constructor(private route: ActivatedRoute, private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
 
-  ngOnInit(): void {
+    this.isServer = isPlatformServer(this.platformId);
+
+    // if (this.isServer) {
+    //   this.route.paramMap.subscribe(params => {
+    //     const articleId = params.get('id');
+    //     // 你可以在这里使用 articleId 进行其他操作，例如从服务中获取文章数据
+    //     console.log("articleId===", articleId);
+    //     // this.apiGetArticleMarkdownById(articleId);
+    //   });
+    // } else {
+    // afterNextRender(() => {
+    // this.isBrowser = isPlatformBrowser(this.platformId);
+
     this.route.paramMap.subscribe(params => {
       const articleId = params.get('id');
       // 你可以在这里使用 articleId 进行其他操作，例如从服务中获取文章数据
       console.log("articleId===", articleId);
-      this.apiGetArticleMarkdownById(articleId);
+      // this.apiGetArticleMarkdownById(articleId);
+      const navigation = this.router.getCurrentNavigation();
+      if (navigation?.extras?.state) {
+        this.markdownSrc = navigation.extras.state['markdownSrc'];
+      }
     });
+    // })
+    // }
+
+
+  }
+
+  ngOnInit(): void {
+
   }
 
   apiGetArticleMarkdownById(id: string | null) {

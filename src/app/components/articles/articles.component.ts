@@ -29,8 +29,10 @@ export class ArticlesComponent {
   }
 
   goToArticle(article: IArticle) {
-    // this.router.navigate(['/article', article.id]);
-    this.message.info('正在努力开发中~');
+    this.router.navigate(['/article', article.id], {
+      state: { markdownSrc: article.markdownSrc }
+    });
+    // this.message.info('正在努力开发中~');
   }
 
 }
