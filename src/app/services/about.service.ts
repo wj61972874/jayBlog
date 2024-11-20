@@ -16,7 +16,7 @@ export class AboutService {
         // return this.http.get('http://localhost:3399/api/jayBlog/dujitang/index');
         // return this.http.get('http://localhost:4000/jayBlogApi/dujitang/index');
         // return this.http.get(`${this.routePrefix}/api/jayBlog/dujitang/index`);
-        return this.http.get(`http://jaygogo-aigc.top/api/jayBlog/dujitang/index`);
+        return this.http.get(`https://jaygogo-aigc.top/api/jayBlog/dujitang/index`);
 
     }
 }

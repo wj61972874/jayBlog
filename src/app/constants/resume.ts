@@ -286,6 +286,6 @@ export class ResumeContextService {
     }
 
     getBlogLink() {
-        return 'http://jaygogo-aigc.top/home';
+        return 'https://jaygogo-aigc.top/home';
     }
 }
