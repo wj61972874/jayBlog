@@ -2,6 +2,7 @@ import { Component, inject, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { IArticle } from '@app/interfaces/article.interface';
 import { ArticleService } from '@app/services/article.service';
+import { AnalyticsService } from '@app/utils/analytics.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
@@ -17,7 +18,7 @@ export class ArticlesComponent {
 
   articles: IArticle[] = [];
 
-  constructor(private router: Router, private message: NzMessageService) {
+  constructor(private router: Router, private message: NzMessageService, private analyticsService: AnalyticsService) {
     this.fetchArticles();
   }
 
@@ -29,6 +30,7 @@ export class ArticlesComponent {
   }
 
   goToArticle(article: IArticle) {
+    this.analyticsService.trackClick({});
     this.router.navigate(['/article', article.id], {
       state: { markdownSrc: article.markdownSrc }
     });
