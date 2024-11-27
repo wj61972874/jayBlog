@@ -81,7 +81,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
     // 在这里调用服务获取数据
     this.aboutService.apiGetDujitangIndex().subscribe((res) => {
       console.log("res=========", res);
-      this.chickenSoup = res?.content || '他喜欢你素颜，必须是素颜好看。';
+      this.chickenSoup = res || '他喜欢你素颜，必须是素颜好看。';
     });
   }
 
