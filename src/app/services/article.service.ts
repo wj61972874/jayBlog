@@ -21,7 +21,7 @@ export class ArticleService {
   }
 
   apiGetTagsWithArticleCounts(): Observable<any> {
-    return this.http.get(`http://localhost:8080/api/jayBlog/tags/article/list`);
-    // return this.http.get(`https://jaygogo-aigc.top/api/jayBlog/tags/article/list`);
+    // return this.http.get(`http://localhost:8080/api/jayBlog/tags/article/list`);
+    return this.http.get(`https://jaygogo-aigc.top/api/jayBlog/tags/article/list`);
   }
 }
