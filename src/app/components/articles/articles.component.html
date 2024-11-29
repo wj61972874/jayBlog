@@ -5,12 +5,17 @@
     >
       <div class="px-[24px] py-[12px]">
         @for (article of articles; track $index) {
-        <div class="cursor-pointer mb-[10px]">{{ article.title }}</div>
+        <div
+          class="cursor-pointer mb-[10px] hover:text-[#1890ff] transition-all"
+          (click)="goToArticle(article)"
+        >
+          {{ article.title }}
+        </div>
         }
       </div>
     </div>
     <div class="flex-1">
-      @for (article of articles; track $index) {
+      @for (article of articles; track article.title) {
       <div
         class="w-full bg-white rounded-[10px] p-[20px] mb-[24px] border-[1px] border-[#e8e2f582] cursor-pointer transition-all hover:scale-[1.01] hover:shadow-lg"
         (click)="goToArticle(article)"
@@ -19,8 +24,36 @@
         <div class="text-sm text-[#7087a7] my-1.5">
           {{ article.description }}
         </div>
+        <div class="mt-4 flex justify-between">
+          <div>
+            @for (tag of article.tags; track tag) {
+            <nz-tag [nzBordered]="false" class="mr-2">{{ tag }}</nz-tag>
+            }
+          </div>
+          <div class="text-slate-400">
+            {{ article.updatedAt | date : "yyyy-MM-dd" }}
+          </div>
+        </div>
       </div>
       }
+    </div>
+    <div
+      class="w-[240px] ml-[40px] bg-white rounded-[10px] border-[1px] border-[#e8e2f582]"
+    >
+      <div class="px-[24px] py-[12px]">
+        @for (tag of tags; track $index) {
+        <nz-tag
+          [nzColor]="customColors[$index % 10]"
+          [nzBordered]="false"
+          class="mb-2 cursor-pointer"
+          >{{ tag.tagName }} ({{ tag.articleCount }})</nz-tag
+        >
+        <!-- <div class="cursor-pointer mb-[10px]">
+          {{ tag.tagName }}
+         
+        </div> -->
+        }
+      </div>
     </div>
   </div>
 </article>

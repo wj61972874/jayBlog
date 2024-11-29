@@ -7,3 +7,9 @@ export interface IArticle {
     updatedAt: string;
     tags: string[];
 }
+
+export interface ITagCount {
+    tagId: number;
+    tagName: string;
+    articleCount: number;
+}
