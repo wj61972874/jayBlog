@@ -1,0 +1,60 @@
+<!-- <div class="timeline">
+  @for (entry of diaryEntries; track $index) {
+  <div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div
+      class="timeline-arrow"
+      [ngClass]="{
+        'left-arrow': $index % 2 === 0,
+        'right-arrow': $index % 2 !== 0
+      }"
+    ></div>
+    <div
+      class="timeline-content"
+      [ngClass]="{
+        'left-content': $index % 2 === 0,
+        'right-content': $index % 2 !== 0
+      }"
+    >
+      <div class="timeline-date">
+        {{ entry.createTime | date : "yyyy-MM-dd" }}
+      </div>
+      <h3>{{ entry.title }}</h3>
+      <p>{{ entry.content }}</p>
+      <img
+        *ngIf="entry.coverImage"
+        [src]="entry.coverImage"
+        alt="Cover Image"
+      />
+    </div>
+  </div>
+  }
+</div> -->
+
+<header>
+  <p>Worked on all modern browers</p>
+  <h1>CSS based responsive timeline</h1>
+</header>
+
+<div class="timeline">
+  <!-- Item 1 -->
+  @for (entry of diaryEntries; track $index) {
+  <li>
+    <div [ngClass]="$index % 2 === 0 ? 'direction-r' : 'direction-l'">
+      <div class="flag-wrapper">
+        <span class="hexa"></span>
+        <span class="flag">{{ entry.title }}</span>
+        <span class="time-wrapper"
+          ><span class="time">{{
+            entry.createTime | date : "yyyy-MM-dd"
+          }}</span></span
+        >
+      </div>
+      <div class="desc">
+        {{ entry.content }}
+      </div>
+    </div>
+  </li>
+
+  }
+</div>
