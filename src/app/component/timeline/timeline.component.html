@@ -38,20 +38,20 @@
 
 <div class="timeline">
   <!-- Item 1 -->
-  @for (entry of diaryEntries; track $index) {
+  @for (diary of diaries; track $index) {
   <li>
     <div [ngClass]="$index % 2 === 0 ? 'direction-r' : 'direction-l'">
       <div class="flag-wrapper">
         <span class="hexa"></span>
-        <span class="flag">{{ entry.title }}</span>
+        <span class="flag">{{ diary.title }}</span>
         <span class="time-wrapper"
           ><span class="time">{{
-            entry.createTime | date : "yyyy-MM-dd"
+            diary.createdAt | date : "yyyy-MM-dd"
           }}</span></span
         >
       </div>
       <div class="desc">
-        {{ entry.content }}
+        {{ diary.description }}
       </div>
     </div>
   </li>

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TimelineComponent } from '@app/component/timeline/timeline.component';
+import { IDiaryInfo } from '@app/interfaces/diary.interface';
+import { DiaryService } from '@app/services/diary.service';
 
 @Component({
   selector: 'app-diary',
@@ -10,4 +12,20 @@ import { TimelineComponent } from '@app/component/timeline/timeline.component';
 })
 export class DiaryComponent {
 
+  diaries: IDiaryInfo[] = [];
+
+  diaryService = inject(DiaryService);
+
+  constructor() {
+    this.fetchDiaries();
+  }
+
+  fetchDiaries() {
+    // fetch diaries
+    this.diaryService.apiGetDiaries().subscribe((res: any) => {
+      console.log(res);
+      this.diaries = res;
+    });
+
+  }
 }
