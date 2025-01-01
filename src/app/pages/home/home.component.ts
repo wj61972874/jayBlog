@@ -15,6 +15,7 @@ export class HomeComponent {
   constructor() {
     afterNextRender(() => {
       AOS.init();
+      document.body.style.overflow = 'auto';
     })
   }
 
